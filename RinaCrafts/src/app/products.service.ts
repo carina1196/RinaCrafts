@@ -8,19 +8,19 @@ export class ProductsService {
     {
       description: 'White',
       img: '4plyCotton/white.png',
-      quantity: 100,
+      quantity: 5,
       price: 0.8,
     },
     {
       description: 'Cream',
       img: '4plyCotton/cream.png',
-      quantity: 100,
+      quantity: 0,
       price: 0.8,
     },
     {
       description: 'Skin',
       img: '4plyCotton/skin.png',
-      quantity: 100,
+      quantity: 10,
       price: 0.8,
     },
     {

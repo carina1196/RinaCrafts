@@ -1,1 +1,7 @@
-<p>itempage works!</p>
+<div class="container">
+  <div class="row">
+    @for (item of data; track item.img) {
+    <app-itemcard [item]="item" class="col-lg-3 col-md-4"></app-itemcard>
+    }
+  </div>
+</div>
