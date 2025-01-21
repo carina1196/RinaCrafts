@@ -5,3 +5,23 @@
 img {
   height: 20rem;
 }
+
+button {
+  margin: 10px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input {
+  display: inline;
+  width: 20%;
+  border-radius: 8px;
+  padding: 5px;
+  text-align: center;
+}

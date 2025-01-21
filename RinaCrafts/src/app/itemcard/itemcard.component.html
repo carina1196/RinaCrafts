@@ -5,25 +5,29 @@
     <p class="card-text">
       Price: {{price | currency : "SGD"}}
     </p>
-    @if (stock == 0){
-    <button class="btn btn-secondary" disabled="true">Out of Stock</button>
-    } @else{ @if (qtySelected == 0) {
-    <button class="btn btn-primary" (click)="addItem()">Add to Cart</button>
-    } @else {
-    <button class="btn btn-danger" (click)="minusItem()">-</button>
-    <input
-      class="input-group"
-      type="number"
-      [(ngModel)]="qtySelected"
-      value="{{qtySelected}}"
-    />
-    <button
-      class="btn btn-success"
-      (click)="addItem()"
-      [disabled]="exceedStock"
-    >
-      +
-    </button>
-    } }
+    <div class="text-center">
+      @if (stock == 0){
+      <button class="btn btn-secondary" disabled="true">Out of Stock</button>
+      } @else{ @if (qtySelected == 0) {
+      <button class="btn btn-primary" (click)="addItem(item)">
+        Add to Cart
+      </button>
+      } @else {
+      <button class="btn btn-danger" (click)="minusItem(item)">-</button>
+      <input
+        class="input-group"
+        type="number"
+        [(ngModel)]="qtySelected"
+        value="{{qtySelected}}"
+      />
+      <button
+        class="btn btn-success"
+        (click)="addItem(item)"
+        [disabled]="exceedStock"
+      >
+        +
+      </button>
+      } }
+    </div>
   </div>
 </div>

@@ -13,6 +13,5 @@ export class ItempageComponent {
 
   constructor(private productsService: ProductsService) {
     this.data = productsService.getAllProducts();
-    console.log(this.data);
   }
 }

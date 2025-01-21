@@ -17,31 +17,51 @@
         <a class="nav-link" routerLink="">Home</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" routerLink="aboutus">About Us</a>
+      </li>
+      <li class="nav-item">
         <div class="dropdown">
-          <a
+          <button
             class="nav-link dropdown-toggle"
-            id="dropdownProductButton"
+            type="button"
+            id="productsDropdown"
             data-bs-toggle="dropdown"
-            aria-haspopup="true"
             aria-expanded="false"
           >
             Products
-          </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownProductButton">
-            <a class="dropdown-item" routerLink="products">All Products</a>
-            <a class="dropdown-item" routerLink="#">Another action</a>
-            <a class="dropdown-item" routerLink="#">Something else here</a>
-          </div>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+            <li>
+              <a class="dropdown-item" routerLink="products">All Products</a>
+            </li>
+          </ul>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="aboutus">About Us</a>
+        <div class="dropdown">
+          <button
+            class="nav-link dropdown-toggle"
+            type="button"
+            id="patternDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Crochet Patterns
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="patternDropdown">
+            <li>
+              <a class="dropdown-item" routerLink="crochetPatterns"
+                >All Patterns</a
+              >
+            </li>
+          </ul>
+        </div>
       </li>
     </ul>
     <ul class="navbar-nav ms-auto">
       <a class="nav-link" routerLink="cart">
         <i class="bi bi-cart"></i> Cart
-        <span class="badge bg-primary">0</span>
+        <!-- <span class="badge bg-primary">0</span> -->
       </a>
     </ul>
   </div>
