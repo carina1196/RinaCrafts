@@ -12,6 +12,6 @@ export class ItempageComponent {
   data: any;
 
   constructor(private productsService: ProductsService) {
-    this.data = productsService.getAllProducts();
+    productsService.getAllProducts().subscribe((res) => (this.data = res));
   }
 }

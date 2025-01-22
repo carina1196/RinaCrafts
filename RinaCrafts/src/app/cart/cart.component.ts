@@ -2,22 +2,40 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CartService } from '../cart.service';
 import { CurrencyPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-cart',
-  imports: [RouterLink, CurrencyPipe],
+  imports: [RouterLink, CurrencyPipe, FormsModule],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css',
 })
 export class CartComponent {
   itemsInCart: any;
 
-  constructor(private cartService: CartService) {
-    this.itemsInCart = cartService.getCartItems();
+  constructor(private cartService: CartService) {}
+
+  ngOnInit() {
+    this.loadCart();
   }
+
+  loadCart() {
+    this.itemsInCart = this.cartService.getCartItems();
+  }
+
+  addItem = (item: any) => {
+    this.cartService.addItem(item);
+    this.loadCart();
+  };
+
+  minusItem = (item: any) => {
+    this.cartService.minusItem(item);
+    this.loadCart();
+  };
 
   checkOut = () => {
     this.cartService.clearCart();
+    this.loadCart();
     alert(
       'Thank you for shopping with us! We have received your order. We will ship out your order soon.'
     );

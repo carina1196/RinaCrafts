@@ -4,15 +4,22 @@
 <div class="container">
   <table class="table">
     <thead>
+      <th>Brand</th>
       <th>Description</th>
       <th>Quantity</th>
       <th>Total Price</th>
+      <th></th>
     </thead>
     <tbody>
       @for (item of itemsInCart; track item.description) {
       <tr>
+        <td>{{item.brand}}</td>
         <td>{{item.description}}</td>
-        <td><input value="{{item.quantity}}" /></td>
+        <td>
+          <button class="btn btn-danger" (click)="minusItem(item)">-</button>
+          <input [(ngModel)]="item.quantity" value="{{item.quantity}}" />
+          <button class="btn btn-success" (click)="addItem(item)">+</button>
+        </td>
         <td>{{item.quantity * item.price | currency: "SGD"}}</td>
       </tr>
       }

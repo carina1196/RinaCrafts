@@ -2,6 +2,7 @@
   <img class="card-img-top" src="{{img}}" alt="Card image cap" />
   <div class="card-body">
     <h5 class="card-title">{{description}}</h5>
+    <p id="product-brand">{{brand}}</p>
     <p class="card-text">
       Price: {{price | currency : "SGD"}}
     </p>
@@ -19,11 +20,12 @@
         type="number"
         [(ngModel)]="qtySelected"
         value="{{qtySelected}}"
+        (ngModelChange)="onInputChange($event)"
       />
       <button
         class="btn btn-success"
         (click)="addItem(item)"
-        [disabled]="exceedStock"
+        [disabled]="qtySelected >=stock"
       >
         +
       </button>

@@ -12,13 +12,15 @@ export class CartService {
   addItem = (item: any) => {
     this.totalQty++;
     const hasItem = this.itemsInCart.find(
-      (data: any) => data.description == item.description
+      (data: any) =>
+        data.description == item.description && data.brand == item.brand
     );
 
     if (hasItem) {
       hasItem.quantity++;
     } else {
       this.itemsInCart.push({
+        brand: item.brand,
         description: item.description,
         quantity: 1,
         price: item.price,
@@ -29,16 +31,29 @@ export class CartService {
   minusItem = (item: any) => {
     this.totalQty--;
     let hasItem = this.itemsInCart.find(
-      (data: any) => data.description == item.description
+      (data: any) =>
+        item.description == data.description && data.brand == item.brand
     );
     if (hasItem) {
       if (hasItem.quantity > 1) {
         hasItem.quantity--;
       } else {
         this.itemsInCart = this.itemsInCart.filter(
-          (data: any) => data.description !== hasItem.description
+          (data: any) =>
+            data.description !== hasItem.description ||
+            data.brand !== hasItem.brand
         );
       }
+    }
+  };
+
+  updateItemQty = (item: any, quantity: number) => {
+    let hasItem = this.itemsInCart.find(
+      (data: any) =>
+        item.description == data.description && data.brand == item.brand
+    );
+    if (hasItem) {
+      hasItem.quantity = quantity;
     }
   };
 

@@ -18,7 +18,7 @@ export class ItemcardComponent {
   stock: number = 0;
   qtySelected: number = 0;
   soldOut: boolean = false;
-  exceedStock: boolean = false;
+  brand: string = '';
 
   constructor(private cartService: CartService) {}
 
@@ -27,9 +27,15 @@ export class ItemcardComponent {
     this.img = this.item.img;
     this.price = this.item.price;
     this.stock = this.item.quantity;
+    this.brand = this.item.brand;
     this.checkQty();
     this.loadQty(this.item);
   }
+
+  onInputChange = (value: number) => {
+    this.qtySelected = value;
+    this.cartService.updateItemQty(this.item, value);
+  };
 
   checkQty = () => {
     if (this.stock < 1) {
@@ -39,18 +45,9 @@ export class ItemcardComponent {
     }
   };
 
-  checkSelected = () => {
-    if (this.qtySelected >= this.stock) {
-      this.exceedStock = true;
-    } else {
-      this.exceedStock = false;
-    }
-  };
-
   addItem = (item: any) => {
     this.cartService.addItem(item);
     this.qtySelected++;
-    this.checkSelected();
   };
 
   minusItem = (item: any) => {
@@ -58,13 +55,13 @@ export class ItemcardComponent {
     if (this.qtySelected > 0) {
       this.qtySelected--;
     }
-    this.checkSelected();
   };
 
   loadQty = (item: any) => {
     const cartItems = this.cartService.getCartItems();
     let inCart = cartItems.find(
-      (data: any) => data.description == item.description
+      (data: any) =>
+        data.description == item.description && data.brand == item.brand
     );
     if (inCart) {
       this.qtySelected = inCart.quantity;

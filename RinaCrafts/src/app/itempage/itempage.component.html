@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    @for (item of data; track item.img) {
+    @for (item of data; track item.id) {
     <app-itemcard [item]="item" class="col-lg-3 col-md-4"></app-itemcard>
     }
   </div>
