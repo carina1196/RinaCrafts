@@ -13,7 +13,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'White',
       img: '4plyCotton/white.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -22,7 +22,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Cream',
       img: '4plyCotton/cream.png',
-      quantity: 0,
+      stock: 0,
       price: 0.8,
     },
     {
@@ -31,7 +31,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Skin',
       img: '4plyCotton/skin.png',
-      quantity: 10,
+      stock: 10,
       price: 0.8,
     },
     {
@@ -40,7 +40,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Fair Skin',
       img: '4plyCotton/fairSkin.png',
-      quantity: 100,
+      stock: 100,
       price: 0.8,
     },
     {
@@ -49,7 +49,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Pink',
       img: '4plyCotton/pink.png',
-      quantity: 100,
+      stock: 100,
       price: 0.8,
     },
     {
@@ -58,7 +58,7 @@ export class ProductsService {
       brand: 'lifeYarn4ply',
       description: 'White',
       img: '4plyLifeYarn/white.png',
-      quantity: 100,
+      stock: 100,
       price: 1.2,
     },
     {
@@ -67,7 +67,7 @@ export class ProductsService {
       brand: 'lifeYarn4ply',
       description: 'Cream',
       img: '4plyLifeYarn/cream.png',
-      quantity: 100,
+      stock: 100,
       price: 1.2,
     },
     {
@@ -76,7 +76,7 @@ export class ProductsService {
       brand: 'lifeYarn4ply',
       description: 'Navy',
       img: '4plyLifeYarn/navy.png',
-      quantity: 100,
+      stock: 100,
       price: 1.2,
     },
     {
@@ -85,7 +85,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Royal Blue',
       img: '4plyCotton/royalBlue.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -94,7 +94,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Navy',
       img: '4plyCotton/navy.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -103,7 +103,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Turquoise',
       img: '4plyCotton/turquoise.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -112,7 +112,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Emerald',
       img: '4plyCotton/emerald.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -121,7 +121,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Lime',
       img: '4plyCotton/lime.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -130,7 +130,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Green',
       img: '4plyCotton/green.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -139,7 +139,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Grey',
       img: '4plyCotton/grey.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -148,7 +148,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Black',
       img: '4plyCotton/black.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -157,7 +157,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Light Grey',
       img: '4plyCotton/lightGrey.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -166,7 +166,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Orange',
       img: '4plyCotton/orange.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -175,7 +175,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Matcha',
       img: '4plyCotton/matcha.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -184,7 +184,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Aubergine',
       img: '4plyCotton/aubergine.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -193,7 +193,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Off White',
       img: '4plyCotton/offWhite.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -202,7 +202,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Lavender',
       img: '4plyCotton/lavender.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -211,7 +211,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Aquamarine',
       img: '4plyCotton/aquamarine.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -220,7 +220,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Caramel',
       img: '4plyCotton/caramel.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -229,7 +229,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Blue',
       img: '4plyCotton/blue.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -238,7 +238,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Hot Pink',
       img: '4plyCotton/hotPink.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -247,7 +247,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Light Aqua',
       img: '4plyCotton/lightAqua.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -256,7 +256,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Light Pink',
       img: '4plyCotton/lightPink.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -265,7 +265,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Light Yellow',
       img: '4plyCotton/lightYellow.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -274,7 +274,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Mauve',
       img: '4plyCotton/mauve.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -283,7 +283,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Purple',
       img: '4plyCotton/purple.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -292,7 +292,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Red',
       img: '4plyCotton/red.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -301,7 +301,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Watermelon Red',
       img: '4plyCotton/watermelonRed.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -310,7 +310,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Wine',
       img: '4plyCotton/wine.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
     {
@@ -319,7 +319,7 @@ export class ProductsService {
       brand: 'cottonYarn4ply',
       description: 'Yellow',
       img: '4plyCotton/yellow.png',
-      quantity: 5,
+      stock: 5,
       price: 0.8,
     },
   ];

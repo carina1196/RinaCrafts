@@ -20,10 +20,12 @@ export class CartService {
       hasItem.quantity++;
     } else {
       this.itemsInCart.push({
+        img: item.img,
         brand: item.brand,
         description: item.description,
         quantity: 1,
         price: item.price,
+        stock: item.stock,
       });
     }
   };
@@ -44,6 +46,21 @@ export class CartService {
             data.brand !== hasItem.brand
         );
       }
+    }
+  };
+
+  deleteItem = (item: any) => {
+    let hasItem = this.itemsInCart.find(
+      (data: any) =>
+        item.description == data.description && data.brand == item.brand
+    );
+    if (hasItem) {
+      this.totalQty = this.totalQty - hasItem.quantity;
+      this.itemsInCart = this.itemsInCart.filter(
+        (data: any) =>
+          data.description !== hasItem.description ||
+          data.brand !== hasItem.brand
+      );
     }
   };
 

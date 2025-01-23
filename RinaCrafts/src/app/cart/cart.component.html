@@ -2,29 +2,49 @@
 <div class="text-center">Cart is Empty</div>
 } @else {
 <div class="container">
-  <table class="table">
-    <thead>
-      <th>Brand</th>
-      <th>Description</th>
-      <th>Quantity</th>
-      <th>Total Price</th>
-      <th></th>
-    </thead>
-    <tbody>
-      @for (item of itemsInCart; track item.description) {
-      <tr>
-        <td>{{item.brand}}</td>
-        <td>{{item.description}}</td>
-        <td>
-          <button class="btn btn-danger" (click)="minusItem(item)">-</button>
-          <input [(ngModel)]="item.quantity" value="{{item.quantity}}" />
-          <button class="btn btn-success" (click)="addItem(item)">+</button>
-        </td>
-        <td>{{item.quantity * item.price | currency: "SGD"}}</td>
-      </tr>
-      }
-    </tbody>
-  </table>
+  <div class="row">
+    <div class="col-4 fw-bold">Item</div>
+    <div class="row col-6">
+      <div class="col-md-6 fw-bold"></div>
+      <div class="col-md-6 fw-bold">Quantity</div>
+    </div>
+
+    <div class="col-1 fw-bold">Total</div>
+  </div>
+  @for (item of itemsInCart; track item.description) {
+  <div class="row">
+    <div class="col-4"><img [src]="item.img" /></div>
+    <div class="row col-6">
+      <div class="col-md-6">
+        <p>{{item.brand}}: {{item.description}}</p>
+      </div>
+      <div class="col-md-6">
+        <button class="btn btn-danger" (click)="minusItem(item)">-</button>
+        <input
+          [(ngModel)]="item.quantity"
+          value="{{item.quantity}}"
+          (ngModelChange)="onInputChange(item, $event)"
+        />
+        <button
+          class="btn btn-success"
+          (click)="addItem(item)"
+          [disabled]="item.quantity >= item.stock"
+        >
+          +
+        </button>
+        <button
+          class="btn btn-secondary"
+          (click)="deleteItem(item)"
+          id="deleteBtn"
+        >
+          <i class="bi bi-trash"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="col-1">{{item.quantity * item.price | currency: "SGD"}}</div>
+  </div>
+  }
 </div>
 }
 

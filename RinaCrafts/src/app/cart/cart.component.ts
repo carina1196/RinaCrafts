@@ -33,11 +33,25 @@ export class CartComponent {
     this.loadCart();
   };
 
+  onInputChange = (item: any, value: number) => {
+    if (value > item.stock) {
+      item.quantity = item.stock;
+    } else {
+      item.quantity = value;
+    }
+    this.cartService.updateItemQty(item, item.quantity);
+  };
+
   checkOut = () => {
     this.cartService.clearCart();
     this.loadCart();
     alert(
       'Thank you for shopping with us! We have received your order. We will ship out your order soon.'
     );
+  };
+
+  deleteItem = (item: any) => {
+    this.cartService.deleteItem(item);
+    this.loadCart();
   };
 }

@@ -26,15 +26,19 @@ export class ItemcardComponent {
     this.description = this.item.description;
     this.img = this.item.img;
     this.price = this.item.price;
-    this.stock = this.item.quantity;
+    this.stock = this.item.stock;
     this.brand = this.item.brand;
     this.checkQty();
     this.loadQty(this.item);
   }
 
   onInputChange = (value: number) => {
-    this.qtySelected = value;
-    this.cartService.updateItemQty(this.item, value);
+    if (value > this.stock) {
+      this.qtySelected = this.stock;
+    } else {
+      this.qtySelected = value;
+    }
+    this.cartService.updateItemQty(this.item, this.qtySelected);
   };
 
   checkQty = () => {
@@ -47,14 +51,12 @@ export class ItemcardComponent {
 
   addItem = (item: any) => {
     this.cartService.addItem(item);
-    this.qtySelected++;
+    this.loadQty(item);
   };
 
   minusItem = (item: any) => {
     this.cartService.minusItem(item);
-    if (this.qtySelected > 0) {
-      this.qtySelected--;
-    }
+    this.loadQty(item);
   };
 
   loadQty = (item: any) => {
