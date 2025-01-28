@@ -1,1 +1,3 @@
-
+.main-content {
+  padding-top: 75px; /* Adjust for the navbar height */
+}

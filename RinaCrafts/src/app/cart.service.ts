@@ -36,16 +36,14 @@ export class CartService {
       (data: any) =>
         item.description == data.description && data.brand == item.brand
     );
-    if (hasItem) {
-      if (hasItem.quantity > 1) {
-        hasItem.quantity--;
-      } else {
-        this.itemsInCart = this.itemsInCart.filter(
-          (data: any) =>
-            data.description !== hasItem.description ||
-            data.brand !== hasItem.brand
-        );
-      }
+    if (hasItem && hasItem.quantity > 1) {
+      hasItem.quantity--;
+    } else {
+      this.itemsInCart = this.itemsInCart.filter(
+        (data: any) =>
+          data.description !== hasItem.description ||
+          data.brand !== hasItem.brand
+      );
     }
   };
 

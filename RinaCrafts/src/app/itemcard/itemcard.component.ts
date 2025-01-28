@@ -67,6 +67,8 @@ export class ItemcardComponent {
     );
     if (inCart) {
       this.qtySelected = inCart.quantity;
+    } else {
+      this.qtySelected = 0;
     }
   };
 }
