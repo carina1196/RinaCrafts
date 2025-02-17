@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,4 +8,12 @@ import { RouterLink } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
-export class NavbarComponent {}
+export class NavbarComponent implements DoCheck {
+  qtyInCart: number = 0;
+
+  constructor(private cartService: CartService) {}
+
+  ngDoCheck(): void {
+    this.qtyInCart = this.cartService.getTotalQty();
+  }
+}

@@ -13,8 +13,8 @@
   </div>
   @for (item of itemsInCart; track item.description) {
   <div class="row">
-    <div class="col-4"><img [src]="item.img" /></div>
-    <div class="row col-6">
+    <div class="col-md-2 col-4"><img [src]="item.img" /></div>
+    <div class="row col-md-8 col-6">
       <div class="col-md-6">
         <p>{{item.brand}}: {{item.description}}</p>
       </div>
@@ -25,13 +25,15 @@
           value="{{item.quantity}}"
           (ngModelChange)="onInputChange(item, $event)"
         />
-        <button
+        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="top" [title]="item.quantity >= item.stock ? 'Selected quantity is equal or greater than available stock.':'' ">
+          <button
           class="btn btn-success"
           (click)="addItem(item)"
-          [disabled]="item.quantity >= item.stock"
-        >
+          [disabled]="item.quantity >= item.stock">
           +
-        </button>
+          </button>
+        </span>
+        
         <button
           class="btn btn-secondary"
           (click)="deleteItem(item)"

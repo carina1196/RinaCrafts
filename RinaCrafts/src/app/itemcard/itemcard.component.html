@@ -22,13 +22,16 @@
         value="{{qtySelected}}"
         (ngModelChange)="onInputChange($event)"
       />
-      <button
+      <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="top" [title]="qtySelected >=stock ? 'Selected quantity is equal or greater than available stock.':'' ">
+        <button
         class="btn btn-success"
         (click)="addItem(item)"
         [disabled]="qtySelected >=stock"
-      >
+        >
         +
-      </button>
+        </button>
+      </span>
+      
       } }
     </div>
   </div>
