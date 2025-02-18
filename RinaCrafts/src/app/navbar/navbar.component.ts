@@ -16,4 +16,12 @@ export class NavbarComponent implements DoCheck {
   ngDoCheck(): void {
     this.qtyInCart = this.cartService.getTotalQty();
   }
+
+  register() {
+    alert('Registration page coming soon!');
+  }
+
+  login() {
+    alert('Login page coming soon!');
+  }
 }

@@ -68,6 +68,7 @@ export class CartService {
         item.description == data.description && data.brand == item.brand
     );
     if (hasItem) {
+      this.totalQty = this.totalQty - hasItem.quantity + quantity;
       hasItem.quantity = quantity;
     }
   };

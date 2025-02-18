@@ -59,10 +59,19 @@
       </li>
     </ul>
     <ul class="navbar-nav ms-auto">
-      <a class="nav-link" routerLink="cart">
-        <i class="bi bi-cart"></i> Cart
-        <span class="badge bg-primary">{{qtyInCart}}</span>
-      </a>
+      <li>
+        <a class="nav-link" (click)="register()">Register</a>
+      </li>
+      <li>
+        <a class="nav-link" (click)="login()">Login</a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="cart">
+          <i class="bi bi-cart"></i> Cart
+          <span class="badge bg-primary">{{qtyInCart}}</span>
+        </a>
+      </li>
+      
     </ul>
   </div>
 </nav>
